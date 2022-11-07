@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-from PIL import ImageColor
 from rpi_ws281x import PixelStrip, Color
 
 LED_COUNT = 168
@@ -16,8 +15,9 @@ def col_to_hex(r, g, b):
 
 
 def hex_to_col(hex):
-    return ImageColor.getrgb(hex)
-    
+    return (int(hex[1:3], 16), int(hex[3:5], 16), int(hex[5:], 16))
+
+
 if __name__=='__main__':
     strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
     strip.begin()
