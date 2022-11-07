@@ -24,3 +24,4 @@ if __name__=='__main__':
 
     for i in range(LED_COUNT+1):
         strip.setPixelColorRGB(i, 255, 0, 0)
+        strip.show()
