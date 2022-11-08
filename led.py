@@ -23,6 +23,7 @@ if __name__=='__main__':
     strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
     strip.begin()
     args = sys.argv[1:]
+    print(args)
 
     color = hex_to_col(args[0])
     for i in range(LED_COUNT+1):
