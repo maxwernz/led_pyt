@@ -24,7 +24,10 @@ if __name__=='__main__':
     strip.begin()
     args = sys.argv[1:]
 
-    color = hex_to_col("#" + args[0])
+    if args == []:
+        color = "#ff2200"
+    else:
+        color = hex_to_col("#" + args[0])
     for i in range(LED_COUNT+1):
         strip.setPixelColorRGB(i, *color)
         strip.show()
