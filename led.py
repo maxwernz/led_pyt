@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from rpi_ws281x import PixelStrip, Color
+import sys
 
 LED_COUNT = 168
 LED_PIN = 18
@@ -22,6 +23,7 @@ if __name__=='__main__':
     strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
     strip.begin()
 
+    color = hex_to_col(sys.argv[1])
     for i in range(LED_COUNT+1):
-        strip.setPixelColorRGB(i, 255, 0, 0)
+        strip.setPixelColorRGB(i, *color)
         strip.show()
