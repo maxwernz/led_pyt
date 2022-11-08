@@ -25,7 +25,7 @@ if __name__=='__main__':
     args = sys.argv[1:]
 
     if args == []:
-        color = "#ff2200"
+        color = hex_to_col("#ff2200")
     else:
         color = hex_to_col("#" + args[0])
     for i in range(LED_COUNT+1):
